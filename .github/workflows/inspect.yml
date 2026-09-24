@@ -1,0 +1,20 @@
+name: Inspect Runner
+
+on: push
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print kernel details and repository files
+        run: |
+          uname -a
+          ls -la
+
+      - name: Count repository files
+        run: |
+          count=$(find . -type f -not -path './.git/*' | wc -l)
+          echo "File count: $count"

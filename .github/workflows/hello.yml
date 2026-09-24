@@ -1,0 +1,10 @@
+name: Hello Action-journey
+on: 
+  push: 
+    
+jobs:
+  Checks:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: Print Greeting
+       run: echo "Hello, Actions Journey!"
